@@ -36,7 +36,7 @@ const Login = () => {
       axios.defaults.headers.common["x-auth-token"] = `Bearer ${token}`;
       toast(message, { type: "success" });
       dispatch(loadMarketData(market));
-      navigate("/complete-info");
+      navigate(market.isCompleted ? "/" : "/complete-info");
     } catch (error) {
       if (error.response) {
         if (error.response.data.message)

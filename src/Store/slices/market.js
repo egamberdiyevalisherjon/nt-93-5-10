@@ -11,10 +11,13 @@ const marketSlice = createSlice({
     loadMarketData(state, { payload }) {
       state.info = payload;
     },
+    removeMarketData(state) {
+      state.info = null;
+    },
   },
 });
 
-export const { loadMarketData } = marketSlice.actions;
+export const { loadMarketData, removeMarketData } = marketSlice.actions;
 
 const marketReducer = marketSlice.reducer;
 
